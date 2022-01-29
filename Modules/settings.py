@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ["https://safe-citadel-33784.herokuapp.com/"]
+# CSRF_TRUSTED_ORIGINS = ["https://safe-citadel-33784.herokuapp.com/"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -131,60 +131,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
-    "https://sub.example.com",
-    "http://localhost:8080",
-    "http://127.0.0.1:9000"
-]
-
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    r"^https://\w+\.example\.com$",
-]
-
-CORS_URLS_REGEX = r'^/api/.*$'
-
-CORS_ALLOW_METHODS = [
-    'DELETE',
-    'GET',
-    'OPTIONS',
-    'PATCH',
-    'POST',
-    'PUT',
-]
-
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-]
-
-
-CORS_ALLOWED_ORIGINS = [
-    'http://read.only.com',
-    'http://change.allowed.com',
-]
 
 CSRF_TRUSTED_ORIGINS = [
     'change.allowed.com',
     'https://safe-citadel-33784.herokuapp.com/',
 ]
 
-
-MIDDLEWARE_CLASSES = [
-    ...
-    'corsheaders.middleware.CorsMiddleware',
-    ...
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'corsheaders.middleware.CorsPostCsrfMiddleware',
-    ...
-]
 
 
 
