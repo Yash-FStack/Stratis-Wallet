@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+CSRF_TRUSTED_ORIGINS = ["https://safe-citadel-33784.herokuapp.com/"]
 # Application definition
 
 INSTALLED_APPS = [
