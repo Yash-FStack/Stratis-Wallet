@@ -33,5 +33,6 @@ function generateQRCode() {
 
 
 function txn(){
-    document.getElementById("txn").style.display="block";
+   alert("");
+   window.open("");
 }
