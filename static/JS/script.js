@@ -30,3 +30,8 @@ function generateQRCode() {
         value: qrtext
     });
 }
+
+
+function txn(){
+    document.getElementById("txn").style.display="block";
+}

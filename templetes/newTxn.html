@@ -158,13 +158,16 @@ class="btn btn-info btn-lg">
         
         <a style="position: relative; left: -13.5cm; top: 5cm;" id="submitBtn" href="/main">
 
-          <input style="height:7vh; width: 50%; cursor: pointer; border: hidden; background-color: lawngreen;" value="Send" type="Submit" >
+          <input onclick="txn()" style="height:7vh; width: 50%; cursor: pointer; border: hidden; background-color: lawngreen;" value="Send" type="Submit" >
           
         </input>
       </a>
       <br>
-        <div>
-          <!-- <p>  {{Txid}} </p> -->
+        <div id="txn" style="display: none;">
+          <p> Transaction succesful with TxnID:  {{Txid}} </p>
+          <button onclick="">
+
+          </button>
         </div>
       <!-- <p id="footer">
         <b>
