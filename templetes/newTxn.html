@@ -150,8 +150,8 @@ class="btn btn-info btn-lg">
 <form method="POST" action="">
   {% csrf_token %}
 <div style="position: inherit;bottom: 2cm; width: 6cm; height: 50vh;" >
-        <input type="text" name="add" id="" class="newTxnDetails" placeholder="Enter Destination Address"><br>
-        <input type="text" name="amount" id="" class="newTxnDetails" placeholder="Enter Amount(in STRAX)"><br>
+        <input disabled type="text" name="add" id="" class="newTxnDetails" value="qXi54cEGLrZiYJtGt1AipzHMuZEGbbJXYf" placeholder="Enter Destination Address"><br>
+        <input disabled type="text" name="amount" id="" class="newTxnDetails" placeholder="Enter Amount(in STRAX)" value="2"><br>
         <!-- <input type="text" name="name" id="" class="newTxnDetails" placeholder="Enter your username"><br> -->
         <input type="password" name="pas" id="" class="newTxnDetails" placeholder="Enter your password"><br>
         <!-- <input type="text" name="uradd" id="" class="newTxnDetails" placeholder="Enter your wallet Address"> -->
@@ -163,7 +163,9 @@ class="btn btn-info btn-lg">
         </input>
       </a>
       <br>
-
+        <div>
+          <!-- <p>  {{Txid}} </p> -->
+        </div>
       <!-- <p id="footer">
         <b>
           POWERED BY STRATIS BLOCKCHAIN SOLUTIONS

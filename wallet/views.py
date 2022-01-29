@@ -66,7 +66,7 @@ def newTxn(request):
         s_txs = [x for x in s_txs.transactions]
         s_txs = sorted(s_txs, key=lambda x: x.amount)
     
-        destination_address = Address(dest_add,StraxTest())
+        destination_address = Address('qXi54cEGLrZiYJtGt1AipzHMuZEGbbJXYf',StraxTest())
     
     
         change_address = node.wallet.balance(
@@ -74,7 +74,7 @@ def newTxn(request):
     
     
         fee_amount = Money(0.0001)
-        amount_to_send = Money(amount)
+        amount_to_send = Money(2)
     
         transactions = []
         trxid_amount = Money(0)
@@ -100,6 +100,7 @@ def newTxn(request):
     
         response = node.wallet.send_transaction(transaction_hex=response.hex)
         print(response.transaction_id)
+        # trxn= response.transaction_id
     
     
     
