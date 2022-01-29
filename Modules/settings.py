@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-# CSRF_TRUSTED_ORIGINS = ["https://safe-citadel-33784.herokuapp.com/"]
+CSRF_TRUSTED_ORIGINS = ["https://safe-citadel-33784.herokuapp.com/"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -128,15 +128,6 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
-
-CSRF_TRUSTED_ORIGINS = [
-    'change.allowed.com',
-    'https://safe-citadel-33784.herokuapp.com/',
-]
-
 
 
 

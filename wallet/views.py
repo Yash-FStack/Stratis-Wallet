@@ -145,7 +145,7 @@ def wallet(request):
 
 
 def register(request):
-    CSRF_TRUSTED_ORIGINS = ['https://safe-citadel-33784.herokuapp.com/']
+    
     if request.method=="POST":
         username = request.POST.get('name')
         lastname = request.POST.get('last_name')
@@ -168,7 +168,6 @@ def register(request):
 
 
 def loginpage(request):
-    CSRF_TRUSTED_ORIGINS = ['https://safe-citadel-33784.herokuapp.com/']
     if request.method == "POST":
         name = request.POST.get('name')
         pwd = request.POST.get('pas')
