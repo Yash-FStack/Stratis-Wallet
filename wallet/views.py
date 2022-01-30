@@ -1,7 +1,6 @@
 from importlib.resources import contents
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render, HttpResponse,redirect
-from matplotlib.style import context
+from django.shortcuts import render,redirect
 from pystratis.nodes import StraxNode
 from typing import List
 from django.contrib.auth.models import User
@@ -74,7 +73,7 @@ def newTxn(request):
     
     
         fee_amount = Money(0.0001)
-        amount_to_send = Money(2)
+        amount_to_send = Money(1)
     
         transactions = []
         trxid_amount = Money(0)

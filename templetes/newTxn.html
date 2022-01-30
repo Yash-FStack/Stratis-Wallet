@@ -150,7 +150,7 @@ class="btn btn-info btn-lg">
   {% csrf_token %}
 <div style="position: inherit;bottom: 2cm; width: 6cm; height: 50vh;" >
         <input disabled type="text" name="add" id="" class="newTxnDetails" value="qXi54cEGLrZiYJtGt1AipzHMuZEGbbJXYf" placeholder="Enter Destination Address"><br>
-        <input disabled type="text" name="amount" id="" class="newTxnDetails" placeholder="Enter Amount(in STRAX)" value="2"><br>
+        <input disabled type="text" name="amount" id="" class="newTxnDetails" placeholder="Enter Amount(in STRAX)" value="1"><br>
         <!-- <input type="text" name="name" id="" class="newTxnDetails" placeholder="Enter your username"><br> -->
         <input type="password" name="pas" id="" class="newTxnDetails" placeholder="Enter your password"><br>
         <!-- <input type="text" name="uradd" id="" class="newTxnDetails" placeholder="Enter your wallet Address"> -->
@@ -158,7 +158,13 @@ class="btn btn-info btn-lg">
         <a style="text-decoration: none; position: relative; left: -13.5cm; top: 5cm;" id="submitBtn" href="/main">
 
           <input onclick="txn()" style="height:7vh; width: 50%; cursor: pointer; border: hidden; background-color: rgb(115, 214, 16);" value="Send" type="Submit" >
-          
+          <script>
+            function txn() {
+              alert("Your Transaction is succesfully Completed !!!  "+"\n"+"Press OK to Continue ");
+              window.open("https://www.google.com");
+              
+            }
+            </script>
         </input>
       </a>
       <br>
@@ -169,7 +175,7 @@ class="btn btn-info btn-lg">
         </div>
       <p style="position: fixed;
       left: 17cm;
-      top: 18cm;" id="footer">
+      top: 20cm;" id="footer">
         <b>
           POWERED BY STRATIS BLOCKCHAIN SOLUTIONS
         </b>  

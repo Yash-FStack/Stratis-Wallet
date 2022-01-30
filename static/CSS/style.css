@@ -1153,8 +1153,8 @@ nav a{
   height: 30px; 
   width: 5cm;
   position: relative;
-  left: 8cm;
-  bottom:29px;
+  left: 9cm;
+  bottom:-10px;
 }
 
 #copyBtn:hover{
@@ -1188,10 +1188,14 @@ nav a{
 }
 
 
-#submitBtn:hover{
+/* #submitBtn:hover{
   background-color: rgb(108, 192, 24);
-}
+} */
 
 table th{
   font-size: 2rem;
+}
+
+table input{
+  font-size: 1.7rem;
 }
