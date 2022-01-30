@@ -1,98 +1,65 @@
-<!-- <!doctype html>
-	<head>
-		<style>
-			/* CSS comes here */
-			body {
-			    padding:20px;
-			}
-			input {
-			    padding:5px;
-			    background-color:transparent;
-			    border:none;
-			    border-bottom:solid 4px #8c52ff;
-			    width:250px;
-			    font-size:16px;
-			}
-			
-			.qr-btn {
-			    background-color:#8c52ff;
-			    padding:8px;
-			    color:white;
-			    cursor:pointer;
-			}
-		</style>
-		
-		<title>JavaScript QR Code Generator</title>
-	</head>
-	<body>
-		<h3>QR Code Generator</h3>
-        <div>
-            <span id="qr-text">
-            Wallet ID:
-            </span>
-          
-        </div>
-        <br/>
-        <div>
-            <button class="qr-btn" onclick="generateQRCode()">Genarate QR Code</button>
-        </div>
-        <br/>
-        <p id="qr-result">Your QR code is:</p>
-        <canvas id="qr-code" ></canvas>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
-		<script>
-		
-			var qr;
-			(function() {
-                    qr = new QRious({
-                    element: document.getElementById('qr-code'),
-                    size: 200,
-                    value: ''
-                });
-            })();
-         
-            function generateQRCode() {
-                var qrtext = document.getElementById('qr-text').innerHTML;
-                document.getElementById("qr-result").innerHTML = "QR code for " + qrtext +":";
-                // alert(qrtext);
-                qr.set({
-                    foreground: 'black',
-                    size: 200,
-                    value: qrtext
-                });
-            }
-		</script>
-        
-	</body>
-</html> 
-
-
-
-
- -->
-
- <!DOCTYPE html>
- <html lang="en">
- <head>
-	 <meta charset="UTF-8">
-	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	 <title>Document</title>
-	 <script type="text/javascript">
-		pypyjs.exec(
-		  // Run some Python
-		  'y = [x**2. for x in range(10)]'
-		).then(function() {
-		  // Transfer the value of y from Python to JavaScript
-		  pypyjs.get('y')
-		}).then(function(result) {
-		  // Display an alert box with the value of y in it
-		  alert(result)
-		});
-	  </script>
- </head>
- <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  body {
+      width: 80%;
+      height: 100vh;
+      margin: auto;
+      display: grid;
+      place-items: center;
+  }
+  
+  h1 {
+      font-family: sans-serif;
+  }
+  
+  input {
+      padding: 10px;
+      border-radius: 20px;
+      border: 2px solid steelblue;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      outline: none;
+	  display: none;
+  }
+  </style>
+   
 	
- </body>
- </html>
+	</script>
+</head>
+<body>
+  <h1>QR Code Generator</h1>
+ <span id="add">
+	 Wallet ID: shgfhdsavjdsbvhjdsbv
+ </span>
+  <input 
+  	style="display: none;"
+    type="button" 
+    spellcheck="false"
+    id="text"
+    value="https://google"
+  />
+  <div id="qrcode"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script type="text/javascript">
+document.getElementById("text").value=document.getElementById("add").innerHTML;
+  const qrcode = document.getElementById("qrcode");
+  const textInput = document.getElementById("text"); 
+  const qr = new QRCode(qrcode);
+  qr.makeCode(textInput.value.trim());
+  textInput.onclick = (e) => {
+	qr.makeCode(e.target.value.trim());
+  };
+  </script>
+</body>
+</html>

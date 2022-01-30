@@ -11,26 +11,6 @@ function copyFun(){
 }
 
 
-var qr;
-(function() {
-        qr = new QRious({
-        element: document.getElementById('qr-code'),
-        size: 200,
-        value: ''
-    });
-})();
-
-function generateQRCode() {
-    var qrtext = document.getElementById('add').innerHTML;
-    document.getElementById("qr-result").innerHTML = "QR code for " + qrtext +":";
-    // alert(qrtext);
-    qr.set({
-        foreground: 'black',
-        size: 200,
-        value: qrtext
-    });
-}
-
 
 function txn(){
    alert("");

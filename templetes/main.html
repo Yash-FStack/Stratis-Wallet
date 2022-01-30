@@ -22,29 +22,7 @@
         <link href="https:/fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="/static/CSS/style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
-		<script>
-		
-			var qr;
-			(function() {
-                    qr = new QRious({
-                    element: document.getElementById('qr-code'),
-                    size: 200,
-                    value: ''
-                });
-            })();
-         
-            function generateQRCode() {
-                var qrtext = document.getElementById('add').innerHTML;
-                document.getElementById("qr-result").innerHTML = "QR code for " + qrtext +":";
-                // alert(qrtext);
-                qr.set({
-                    foreground: 'black',
-                    size: 200,
-                    value: qrtext
-                });
-            }
-		</script>
+       
         <script src="/static/JS/script.js"></script>
   </head>
   <body>
@@ -140,10 +118,10 @@ class="btn btn-info btn-lg">
 </div>
 </div>
 <div class="bee-row bee-row-4">
-<div style="background-color: #00000000;" class="bee-row-content reverse">
+<div style="position:relative;bottom: 2cm; background-color: #00000000;" class="bee-row-content reverse">
 <div class="bee-col bee-col-1 bee-col-w6">
 <div class="bee-block bee-block-1 bee-heading">
-<h1 style="width: 50vw; color:#33aad8;font-family:'Oswald', Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size:50px;font-weight:normal;letter-spacing:6px;line-height:120%;text-align:left;margin-top:0;margin-bottom:0;">
+<h1 style=" width: 50vw; color:#33aad8;font-family:'Oswald', Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size:50px;font-weight:normal;letter-spacing:6px;line-height:120%;text-align:left;margin-top:0;margin-bottom:0;">
        WALLET BALANCE : {{ bal }}
        </h1>
        <h4 style="width: 50vw; color:#33aad8;font-family:'Oswald', Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size:20px;font-weight:normal;letter-spacing:6px;line-height:120%;text-align:left;margin-top:0;margin-bottom:0;" >
@@ -154,13 +132,19 @@ class="btn btn-info btn-lg">
 <div class="bee-text-content" style="font-size: 12px; line-height: 180%; text-align: left; color: #393d47; font-family: inherit;">
 <em >
 <span id="add" style=" font-size: 20px; line-height: 27px;">WALLET ADDRESS:  {{ add }}</span>
-         <input id="copyBtn" style="border:1.5px solid chartreuse; cursor: pointer; font-size: 1.5rem;height: 30px; width: 5cm;" type="button" onclick="copyFun()" value="Copy to Clipboard">
+         <input style="position: relative;" id="copyBtn" type="button" onclick="copyFun()" value="Copy to Clipboard">
          <div>
-          <button class="qr-btn" onclick="generateQRCode()">Genarate QR Code</button>
+          <!-- <button id="QRbtn" class="qr-btn" onclick="">Genarate QR Code</button> -->
       </div>
       <br/>
-      <p id="qr-result">Your QR code is:</p>
-      <canvas style=" height: 200; width: 200;" id="qr-code"></canvas>
+      <input 
+  	style="display: none;"
+    type="button" 
+    spellcheck="false"
+    id="text"
+    value="Some Error Occured, Try again."
+  />
+  <div style="position: relative; left: 8cm;" id="qrcode"></div>
       
 </em>
 <p style="font-size: 15px; line-height: 27px;">
@@ -168,11 +152,11 @@ class="btn btn-info btn-lg">
         </p>
 </div>
 </div>
-<div class="bee-block bee-block-3 bee-button">
+<div id="btn1" >
 <a class="bee-button-content" href="/newTxn"
     style="position: relative;
-    top: 5.5cm;
-    left: 2.5cm; border-radius: 20PX; font-size: 12px; line-height: 24px; font-family: 'Oswald', Arial, 'Helvetica Neue', Helvetica, sans-serif; background-color: #33aad8; border-bottom: 0px solid #8a3b8f; border-left: 0px solid #8a3b8f; border-radius: 40px; border-right: 0px solid #8a3b8f; border-top: 0px solid #8a3b8f; color: #ffffff; max-width: 100%; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; padding-top: 5px; width: auto; display: inline-block;">
+    top: -9cm;
+    left: 15.5cm; border-radius: 20PX; font-size: 12px; line-height: 24px; font-family: 'Oswald', Arial, 'Helvetica Neue', Helvetica, sans-serif; background-color: #33aad8; border-bottom: 0px solid #8a3b8f; border-left: 0px solid #8a3b8f; border-radius: 40px; border-right: 0px solid #8a3b8f; border-top: 0px solid #8a3b8f; color: #ffffff; max-width: 100%; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; padding-top: 5px; width: auto; display: inline-block;">
     <span style="border-radius: 20PX; font-size: 16px; line-height: 200%; word-break: break-word;">
         <span style="font-size: 22px; line-height: 44px;">
             SEND STRAX
@@ -180,8 +164,8 @@ class="btn btn-info btn-lg">
     </span></a>
 <a class="bee-button-content" onclick="straxFun()"
     style="position: relative;
-    top: 5.5cm;
-    left: 13cm; border-radius: 20PX; font-size: 12px; line-height: 24px; font-family: 'Oswald', Arial, 'Helvetica Neue', Helvetica, sans-serif; background-color: #33aad8; border-bottom: 0px solid #8a3b8f; border-left: 0px solid #8a3b8f; border-radius: 40px; border-right: 0px solid #8a3b8f; border-top: 0px solid #8a3b8f; color: #ffffff; max-width: 100%; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; padding-top: 5px; width: auto; display: inline-block;">
+     top: -9cm;
+    left: 15.5cm; border-radius: 20PX; font-size: 12px; line-height: 24px; font-family: 'Oswald', Arial, 'Helvetica Neue', Helvetica, sans-serif; background-color: #33aad8; border-bottom: 0px solid #8a3b8f; border-left: 0px solid #8a3b8f; border-radius: 40px; border-right: 0px solid #8a3b8f; border-top: 0px solid #8a3b8f; color: #ffffff; max-width: 100%; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; padding-top: 5px; width: auto; display: inline-block;">
     <span style="font-size: 16px; line-height: 200%; word-break: break-word;">
         <span style="font-size: 22px; line-height: 44px;">
             BUY STRAX
@@ -189,5 +173,20 @@ class="btn btn-info btn-lg">
     </span></a>
 </div>
 </div>
-      
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script type="text/javascript">
+document.getElementById("text").value=document.getElementById("add").innerHTML;
+const qrcode = document.getElementById("qrcode");
+const textInput = document.getElementById("text"); 
+const qr = new QRCode(qrcode);
+qr.makeCode(textInput.value.trim());
+textInput.onload = (e) => {
+  qr.makeCode(e.target.value.trim());
+};
+console.log(document.getElementById("text").value);
+</script>
+</body>      
 </html>

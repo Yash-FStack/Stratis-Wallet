@@ -1146,3 +1146,43 @@ nav a{
 
 
 
+#copyBtn{
+  border:1.5px solid rgb(126, 236, 16);
+  cursor: pointer; 
+  font-size: 1.5rem;
+  height: 30px; 
+  width: 5cm;
+  position: relative;
+  left: 8cm;
+  bottom:29px;
+}
+
+#copyBtn:hover{
+  color: white;
+  background-color: rgb(113, 211, 15);
+  font-size: 1.7rem;
+  border: hidden;
+}
+
+#QRbtn{
+  border:1.5px solid rgb(16, 229, 236);
+  cursor: pointer; 
+  font-size: 1.5rem;
+  height: 30px; 
+  width: 5cm;
+  position: relative;
+  left: 14cm;
+  bottom:59px;
+  border-radius: 8px;
+  background: rgba(128, 255, 0, 0);
+}
+
+#QRbtn:hover{
+  background:rgb(7, 194, 194) ;
+  color: white;
+  font-size: 1.7rem;
+}
+
+#btn1 a{
+  text-decoration: none;
+}
