@@ -67,42 +67,41 @@ bottom: 1cm; right: 3cm;" class="bee-row-content no_stack">
 	</a>
 </div>
 </div>
-<div style="position: relative; " class="bee-col bee-col-2 bee-col-w8">
-        <div class="bee-block bee-block-1 bee-menu">
-          <nav class="bee-menu">
-            <input
-              class="bee-hamburger-trigger"
-              id="bee-hamburger-mzt16ua"
-              type="checkbox"
-            />
-            <label
-              class="bee-hamburger-controls"
-              for="bee-hamburger-mzt16ua"
-            >
-              <span class="bee-hamburger-open"> </span>
-              <span class="bee-hamburger-close"> </span>
-            </label>
-            <ul class="bee-vertical with-bee-hamburger">
-              <a style="text-decoration: none;" href="/main" target="_self" title="">
-                <li>MY WALLET</li>
-              </a>
-              <a style="text-decoration: none;" href="/profile" target="_self" title="">
-                <li>PROFILE</li>
-              </a>
-              <a style="text-decoration: none;" href="/oldTxns" target="_self" title="">
-                <li>TRANSACTIONS</li>
-              </a>
-              <a style="color: red; text-decoration: none;" href="/newTxn" target="_self">
-                <li>SEND STRAX</li>
-              </a>
-             
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
+<div class="bee-col bee-col-2 bee-col-w8">
+  <div class="bee-block bee-block-1 bee-menu">
+    <nav class="bee-menu">
+      <input
+        class="bee-hamburger-trigger"
+        id="bee-hamburger-mzt16ua"
+        type="checkbox"
+      />
+      <label
+        class="bee-hamburger-controls"
+        for="bee-hamburger-mzt16ua"
+      >
+        <span class="bee-hamburger-open"> </span>
+        <span class="bee-hamburger-close"> </span>
+      </label>
+      <ul class="bee-vertical with-bee-hamburger">
+        <a style=" text-decoration: none;" href="/main" target="_self" title="">
+          <li>MY WALLET</li>
+        </a>
+        <a style="text-decoration: none;" href="/profile" target="_self" title="">
+          <li>PROFILE</li>
+        </a>
+        <a style="text-decoration: none;" href="/oldTxns" target="_self" title="">
+          <li>TRANSACTIONS</li>
+        </a>
+        <a style="color: red; text-decoration: none;" href="/newTxn" target="_self">
+          <li>SEND STRAX</li>
+        </a>
+       
+      </ul>
+    </nav>
   </div>
-  
+</div>
+</div>
+</div>  
 <a style="    width: 10vw;    position: relative;    float: right;    right: 1cm;    top: -2.5cm;" href= "{% url 'logout' %}"
 class="btn btn-info btn-lg">
         <span class="glyphicon glyphicon-log-out"></span> Log out
@@ -156,24 +155,25 @@ class="btn btn-info btn-lg">
         <input type="password" name="pas" id="" class="newTxnDetails" placeholder="Enter your password"><br>
         <!-- <input type="text" name="uradd" id="" class="newTxnDetails" placeholder="Enter your wallet Address"> -->
         
-        <a style="position: relative; left: -13.5cm; top: 5cm;" id="submitBtn" href="/main">
+        <a style="text-decoration: none; position: relative; left: -13.5cm; top: 5cm;" id="submitBtn" href="/main">
 
-          <input onclick="txn()" style="height:7vh; width: 50%; cursor: pointer; border: hidden; background-color: lawngreen;" value="Send" type="Submit" >
+          <input onclick="txn()" style="height:7vh; width: 50%; cursor: pointer; border: hidden; background-color: rgb(115, 214, 16);" value="Send" type="Submit" >
           
         </input>
       </a>
       <br>
         <div id="txn" style="display: none;">
-          <p> Transaction succesful with TxnID:  {{Txid}} </p>
+          <p> Transaction succesfull with TxnID:  {{Txid}} </p>
           <button onclick="">
-
           </button>
         </div>
-      <!-- <p id="footer">
+      <p style="position: fixed;
+      left: 17cm;
+      top: 18cm;" id="footer">
         <b>
           POWERED BY STRATIS BLOCKCHAIN SOLUTIONS
         </b>  
-        </p> -->
+        </p>
         </form>
         </div>
       </body>

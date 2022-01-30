@@ -1186,3 +1186,12 @@ nav a{
 #btn1 a{
   text-decoration: none;
 }
+
+
+#submitBtn:hover{
+  background-color: rgb(108, 192, 24);
+}
+
+table th{
+  font-size: 2rem;
+}
